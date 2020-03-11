@@ -1,5 +1,5 @@
 {% set name = "pandera" %}
-{% set version = "0.3.0" %}
+{% set version = "0.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e009bd6963a30fe9aae2f5a964fd4212caa0dce59cdb222b53d0a245236da090
+  sha256: 51a9daf0f973f1f63ebf3c45b9d25ca01d076d2892083b8270783f58f5a3de85
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -34,7 +34,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
-  summary: 'Light-weight and flexible validation for pandas data structures'
+  summary: Light-weight and flexible validation for pandas data structures
   description: |
     Pandas data structures hide a lot of information, and explicitly
     validating them in production-critical or reproducible research
