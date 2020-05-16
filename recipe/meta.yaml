@@ -1,5 +1,5 @@
 {% set name = "pandera" %}
-{% set version = "0.3.2" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6275e85a3102141ad8b0c6559e54416af3991f191f301483900113e67e7a923c
+  sha256: d14f2cdc04cfacca868807243a67666c9378f32da0296e4bf87773dd04bfdf8f
 
 build:
   noarch: python
@@ -20,8 +20,11 @@ requirements:
     - pip
   run:
     - python >=3.5
+    - autopep8
+    - black
     - numpy
     - pandas
+    - pyyaml
     - scipy
     - wrapt
 
