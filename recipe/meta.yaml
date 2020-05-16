@@ -20,8 +20,11 @@ requirements:
     - pip
   run:
     - python >=3.5
+    - autopep8
+    - black
     - numpy
     - pandas
+    - pyyaml
     - scipy
     - wrapt
 
