@@ -22,8 +22,8 @@ requirements:
     - python >=3.6
     - numpy
     - pandas
-    - typing_extensions # [py<=38]
-    - typing_inspect >= 0.6.0
+    - typing_extensions
+    - typing_inspect >=0.6.0
     - wrapt
     - packaging
 
@@ -31,7 +31,7 @@ requirements:
     - scipy
 
     # io packages
-    - pyyaml >= 5.1
+    - pyyaml >=5.1
     - black
 
 test:
