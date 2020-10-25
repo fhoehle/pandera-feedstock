@@ -5,9 +5,13 @@ Home: https://github.com/pandera-dev/pandera
 
 Package license: MIT
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pandera-feedstock/blob/master/LICENSE.txt)
 
 Summary: Light-weight and flexible validation for pandas data structures
+
+Development: https://github.com/pandera-dev/pandera
+
+Documentation: https://pandera.readthedocs.io/en/latest/
 
 Pandas data structures hide a lot of information, and explicitly
 validating them in production-critical or reproducible research

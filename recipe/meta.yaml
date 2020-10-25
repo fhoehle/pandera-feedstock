@@ -1,5 +1,5 @@
 {% set name = "pandera" %}
-{% set version = "0.4.5" %}
+{% set version = "0.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,30 +7,38 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: eb0efb6e8d7d1a5edfbf15d8e8c8c0958c27484a98cffcd371ef688707b0b19c
+  sha256: 0a5400d5a27a9efe14ba2ca2f4f9406602b270b8ab0d98407bdbf19dc469762b
 
 build:
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install .[all] -vv
 
 requirements:
   host:
-    - python >=3.5
+    - python >=3.6
     - pip
   run:
-    - python >=3.5
-    - autopep8
-    - black
+    - python >=3.6
     - numpy
     - pandas
-    - pyyaml
-    - scipy
+    - typing_extensions
+    - typing_inspect >=0.6.0
     - wrapt
+    - packaging
+
+    # hypotheses packages
+    - scipy
+
+    # io packages
+    - pyyaml >=5.1
+    - black
 
 test:
   imports:
     - pandera
+    - pandera.hypotheses
+    - pandera.io
 
 about:
   home: https://github.com/pandera-dev/pandera
