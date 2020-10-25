@@ -12,25 +12,33 @@ source:
 build:
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install .[all] -vv
 
 requirements:
   host:
-    - python >=3.5
+    - python >=3.6
     - pip
   run:
-    - python >=3.5
-    - autopep8
-    - black
+    - python >=3.6
     - numpy
     - pandas
-    - pyyaml
-    - scipy
+    - typing_extensions # [py<=38]
+    - typing_inspect >= 0.6.0
     - wrapt
+    - packaging
+
+    # hypotheses packages
+    - scipy
+
+    # io packages
+    - pyyaml >= 5.1
+    - black
 
 test:
   imports:
     - pandera
+    - pandera.hypotheses
+    - pandera.io
 
 about:
   home: https://github.com/pandera-dev/pandera
