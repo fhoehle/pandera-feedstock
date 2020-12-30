@@ -35,7 +35,7 @@ requirements:
     - black
     
     # strategies packages
-    - hypothesis >= 5.41.1
+    - hypothesis >=5.41.1
 
 test:
   imports:
