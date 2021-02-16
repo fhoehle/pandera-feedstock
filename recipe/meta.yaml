@@ -42,6 +42,7 @@ test:
     - pandera
     - pandera.hypotheses
     - pandera.io
+    - pandera.strategies
 
 about:
   home: https://github.com/pandera-dev/pandera
