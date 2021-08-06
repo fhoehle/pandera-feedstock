@@ -27,7 +27,6 @@ requirements:
     - wrapt
     - packaging
     - pyarrow
-    - frictionless
 
     # hypotheses packages
     - scipy
@@ -35,6 +34,8 @@ requirements:
     # io packages
     - pyyaml >=5.1
     - black
+    - frictionless
+    - click <7.2.0  # frictionless dependency, not a pandera dependency
 
     # strategies packages
     - hypothesis >=5.41.1
