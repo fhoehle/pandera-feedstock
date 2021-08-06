@@ -27,6 +27,7 @@ requirements:
     - wrapt
     - packaging
     - pyarrow
+    - frictionless
 
     # hypotheses packages
     - scipy
@@ -34,7 +35,6 @@ requirements:
     # io packages
     - pyyaml >=5.1
     - black
-    - frictionless
 
     # strategies packages
     - hypothesis >=5.41.1
