@@ -16,16 +16,17 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.7
     - pip
   run:
-    - python >=3.6
+    - python >=3.7
     - numpy
     - pandas
     - typing_extensions
     - typing_inspect >=0.6.0
     - wrapt
     - packaging
+    - pyarrow
 
     # hypotheses packages
     - scipy
@@ -33,6 +34,7 @@ requirements:
     # io packages
     - pyyaml >=5.1
     - black
+    - frictionless
 
     # strategies packages
     - hypothesis >=5.41.1
