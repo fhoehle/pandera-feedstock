@@ -1,5 +1,5 @@
 {% set name = "pandera" %}
-{% set version = "0.7.2" %}
+{% set version = "0.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 448b1f59c1f832d4bde1434c0de918fc9cc7a2f000165052781b9a5bdc8f9190
+  sha256: 86fc52ffde43ed3c16e646f74f12e4c9f39eac029abea9fa16d93d4a47be75b1
 
 build:
   noarch: python
@@ -22,6 +22,7 @@ requirements:
     - python >=3.7
     - numpy
     - pandas
+    - pandas-stubs
     - typing_extensions
     - typing_inspect >=0.6.0
     - wrapt
