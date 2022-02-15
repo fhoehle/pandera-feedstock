@@ -28,6 +28,7 @@ requirements:
     - wrapt
     - packaging
     - pyarrow
+    - pydantic
 
     # hypotheses packages
     - scipy
@@ -40,6 +41,12 @@ requirements:
 
     # strategies packages
     - hypothesis >=5.41.1
+    
+    # fastapi extra
+    - fastapi
+    
+    # mypy extra
+    - pandas-stubs
 
 test:
   imports:
