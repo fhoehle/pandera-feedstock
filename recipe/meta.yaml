@@ -14,46 +14,132 @@ build:
   number: 0
   script: {{ PYTHON }} -m pip install .[all] -vv
 
-requirements:
-  host:
-    - python >=3.7
-    - pip
-  run:
-    - python >=3.7
-    - numpy
-    - pandas
-    - pandas-stubs
-    - typing_extensions
-    - typing_inspect >=0.6.0
-    - wrapt
-    - packaging
-    - pyarrow
-    - pydantic
+outputs:
+  - name: pandera-base
+    build:
+      noarch: python
+    script: {{ PYTHON }} -m pip install . -vv
+    requirements:
+      host:
+        - python >= 3.7
+        - pip
+      run:
+        - python >=3.7
+        - numpy >= 1.9.0
+        - pandas >= 1.0
+        - pandas-stubs
+        - typing_extensions
+        - typing_inspect >=0.6.0
+        - wrapt
+        - packaging >= 20.0
+        - pyarrow
+        - pydantic
+    test:
+      imports:
+        - pandera
 
-    # hypotheses packages
-    - scipy
+  - name: pandera-strategies
+    build:
+      noarch: python
+    requirements:
+      run:
+        - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
+        - hypothesis >=5.41.1
+    test:
+      imports:
+        - pandera.strategies
 
-    # io packages
-    - pyyaml >=5.1
-    - black
-    - frictionless
-    - click <7.2.0  # frictionless dependency, not a pandera dependency
+  - name: pandera-hypotheses
+    build:
+      noarch: python
+    requirements:
+      run:
+        - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
+        - scipy
+    test:
+      imports:
+        - pandera.hypotheses
 
-    # strategies packages
-    - hypothesis >=5.41.1
-    
-    # fastapi extra
-    - fastapi
-    
-    # mypy extra
-    - pandas-stubs
+  - name: pandera-io
+    build:
+      noarch: python
+    requirements:
+      run:
+        - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
+        - pyyaml >=5.1
+        - black
+        - frictionless
+        - click <7.2.0  # frictionless dependency, not a pandera dependency
+    test:
+      imports:
+        - pandera.io
 
-test:
-  imports:
-    - pandera
-    - pandera.hypotheses
-    - pandera.io
-    - pandera.strategies
+  - name: pandera-koalas
+    build:
+      noarch: python
+    requirements:
+      run:
+        - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
+        - koalas
+        - pyspark
+
+  - name: pandera-modin
+    build:
+      noarch: python
+    requirements:
+      run:
+        - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
+        - modin
+
+  - name: pandera-modin-ray
+    build:
+      noarch: python
+    requirements:
+      run:
+        - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
+        - modin-ray
+
+  - name: pandera-modin-dask
+    build:
+      noarch: python
+    requirements:
+      run:
+        - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
+        - modin-dask
+
+  - name: pandera-dask
+    build:
+      noarch: python
+    requirements:
+      run:
+        - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
+        - dask
+        - distributed
+
+  - name: pandera-mypy
+    build:
+      noarch: python
+    requirements:
+      run:
+        - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
+        - pandas-stubs
+
+  - name: pandera-fastapi
+    build:
+      noarch: python
+    requirements:
+      run:
+        - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
+        - fastapi
+
+  - name: pandera-geopandas
+    build:
+      noarch: python
+    requirements:
+      run:
+        - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
+        - geopandas
+        - shapely
 
 about:
   home: https://github.com/pandera-dev/pandera
@@ -62,9 +148,9 @@ about:
   license_file: LICENSE.txt
   summary: Light-weight and flexible validation for pandas data structures
   description: |
-    Pandas data structures hide a lot of information, and explicitly
-    validating them in production-critical or reproducible research
-    settings is a good idea.
+    A dataframe validation library for scientists, engineers, and analysts
+    seeking correctness. Define schemas so you can be confident in the quality
+    of your data.
   doc_url: https://pandera.readthedocs.io/en/latest/
   dev_url: https://github.com/pandera-dev/pandera
 
