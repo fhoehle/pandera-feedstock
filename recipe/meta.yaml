@@ -17,7 +17,8 @@ outputs:
   - name: pandera-base
     build:
       noarch: python
-    script: python -m pip install . -vv
+    script: build.bat  # [win]
+    script: build.sh  # [not win]
     requirements:
       host:
         - python >=3.7
@@ -183,5 +184,6 @@ about:
   dev_url: https://github.com/pandera-dev/pandera
 
 extra:
+  feedstock-name: pandera
   recipe-maintainers:
     - cosmicBboy
