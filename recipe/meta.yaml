@@ -82,6 +82,10 @@ outputs:
         - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
         - koalas
         - pyspark
+    test:
+      imports:
+        - pandera.koalas_accessor
+        - pandera.typing.koalas
 
   - name: pandera-modin
     build:
@@ -90,6 +94,10 @@ outputs:
       run:
         - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
         - modin
+    test:
+      imports:
+        - pandera.modin_accessor
+        - pandera.typing.modin
 
   - name: pandera-modin-ray
     build:
@@ -98,6 +106,10 @@ outputs:
       run:
         - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
         - modin-ray
+    test:
+      imports:
+        - pandera.modin_accessor
+        - pandera.typing.modin
 
   - name: pandera-modin-dask
     build:
@@ -106,6 +118,10 @@ outputs:
       run:
         - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
         - modin-dask
+    test:
+      imports:
+        - pandera.modin_accessor
+        - pandera.typing.modin
 
   - name: pandera-dask
     build:
@@ -115,6 +131,10 @@ outputs:
         - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
         - dask
         - distributed
+    test:
+      imports:
+        - pandera.dask_accessor
+        - pandera.typing.dask
 
   - name: pandera-mypy
     build:
@@ -123,6 +143,9 @@ outputs:
       run:
         - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
         - pandas-stubs
+    test:
+      imports:
+        - pandera.mypy
 
   - name: pandera-fastapi
     build:
@@ -131,6 +154,9 @@ outputs:
       run:
         - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
         - fastapi
+    test:
+      imports:
+        - pandera.typing.fastapi
 
   - name: pandera-geopandas
     build:
@@ -140,6 +166,9 @@ outputs:
         - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
         - geopandas
         - shapely
+    test:
+      imports:
+        - pandera.typing.geopandas
 
 about:
   home: https://github.com/pandera-dev/pandera
