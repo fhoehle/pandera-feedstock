@@ -2,7 +2,7 @@
 {% set version = "0.9.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: pandera-suite
   version: {{ version }}
 
 source:
@@ -10,8 +10,15 @@ source:
   sha256: 3badeea42f1cdb94b0f4b9a370bbeeb64bc669a7642f30b7abd931be3c6aec79
 
 build:
-  noarch: python
   number: 0
+
+test:
+  imports:
+    - pandera
+  requires:
+    - pip
+  commands:
+    - pip check
 
 outputs:
   - name: pandera-base
@@ -20,6 +27,8 @@ outputs:
     script: build.bat  # [win]
     script: build.sh  # [not win]
     requirements:
+      build:
+        - python
       host:
         - python >=3.7
         - pip
@@ -142,6 +151,7 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
+        - mypy
         - pandas-stubs
     test:
       imports:
