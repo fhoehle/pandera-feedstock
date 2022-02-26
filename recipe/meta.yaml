@@ -2,7 +2,7 @@
 {% set version = "0.9.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: pandera-suite
   version: {{ version }}
 
 source:
@@ -10,50 +10,244 @@ source:
   sha256: 3badeea42f1cdb94b0f4b9a370bbeeb64bc669a7642f30b7abd931be3c6aec79
 
 build:
-  noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install .[all] -vv
 
-requirements:
-  host:
-    - python >=3.7
-    - pip
-  run:
-    - python >=3.7
-    - numpy
-    - pandas
-    - pandas-stubs
-    - typing_extensions
-    - typing_inspect >=0.6.0
-    - wrapt
-    - packaging
-    - pyarrow
-    - pydantic
+outputs:
+  - name: pandera-base
+    build:
+      noarch: python
+      script:
+        - python -m pip install . --no-deps -vv
 
-    # hypotheses packages
-    - scipy
+    test:
+      requires:
+        - pip
+      imports:
+        - pandera
+      commands:
+        - pip check
 
-    # io packages
-    - pyyaml >=5.1
-    - black
-    - frictionless
-    - click <7.2.0  # frictionless dependency, not a pandera dependency
+    requirements:
+      host:
+        - python >=3.7
+        - pip
+      run:
+        - python >=3.7
+        - numpy >=1.9.0
+        - pandas >=1.0
+        - pandas-stubs
+        - typing_extensions
+        - typing_inspect >=0.6.0
+        - wrapt
+        - packaging >=20.0
+        - pyarrow
+        - pydantic
+    test:
+      imports:
+        - pandera
 
-    # strategies packages
-    - hypothesis >=5.41.1
-    
-    # fastapi extra
-    - fastapi
-    
-    # mypy extra
-    - pandas-stubs
+  - name: pandera
+    test:
+      requires:
+        - pip
+      imports:
+        - pandera
+      commands:
+        - pip check
+    requirements:
+      run:
+        - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
+    test:
+      imports:
+        - pandera
 
-test:
-  imports:
-    - pandera
-    - pandera.hypotheses
-    - pandera.io
-    - pandera.strategies
+  - name: pandera-strategies
+    test:
+      requires:
+        - pip
+      imports:
+        - pandera
+      commands:
+        - pip check
+    requirements:
+      run:
+        - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
+        - hypothesis >=5.41.1
+    test:
+      imports:
+        - pandera.strategies
+
+  - name: pandera-hypotheses
+    test:
+      requires:
+        - pip
+      imports:
+        - pandera
+      commands:
+        - pip check
+    requirements:
+      run:
+        - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
+        - scipy
+    test:
+      imports:
+        - pandera.hypotheses
+
+  - name: pandera-io
+    test:
+      requires:
+        - pip
+      imports:
+        - pandera
+      commands:
+        - pip check
+    requirements:
+      run:
+        - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
+        - pyyaml >=5.1
+        - black
+        - frictionless
+        - click <7.2.0  # frictionless dependency, not a pandera dependency
+    test:
+      imports:
+        - pandera.io
+
+  - name: pandera-koalas
+    test:
+      requires:
+        - pip
+      imports:
+        - pandera
+      commands:
+        - pip check
+    requirements:
+      run:
+        - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
+        - koalas
+        - pyspark
+    test:
+      imports:
+        - pandera.koalas_accessor
+        - pandera.typing.koalas
+
+  - name: pandera-modin
+    test:
+      requires:
+        - pip
+      imports:
+        - pandera
+      commands:
+        - pip check
+    requirements:
+      run:
+        - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
+        - modin
+    test:
+      imports:
+        - pandera.modin_accessor
+        - pandera.typing.modin
+
+  - name: pandera-modin-ray
+    test:
+      requires:
+        - pip
+      imports:
+        - pandera
+      commands:
+        - pip check
+    requirements:
+      run:
+        - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
+        - modin-ray
+    test:
+      imports:
+        - pandera.modin_accessor
+        - pandera.typing.modin
+
+  - name: pandera-modin-dask
+    test:
+      requires:
+        - pip
+      imports:
+        - pandera
+      commands:
+        - pip check
+    requirements:
+      run:
+        - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
+        - modin-dask
+    test:
+      imports:
+        - pandera.modin_accessor
+        - pandera.typing.modin
+
+  - name: pandera-dask
+    test:
+      requires:
+        - pip
+      imports:
+        - pandera
+      commands:
+        - pip check
+    requirements:
+      run:
+        - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
+        - dask
+        - distributed
+    test:
+      imports:
+        - pandera.dask_accessor
+        - pandera.typing.dask
+
+  - name: pandera-mypy
+    test:
+      requires:
+        - pip
+      imports:
+        - pandera
+      commands:
+        - pip check
+    requirements:
+      run:
+        - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
+        - mypy
+        - pandas-stubs
+    test:
+      imports:
+        - pandera.mypy
+
+  - name: pandera-fastapi
+    test:
+      requires:
+        - pip
+      imports:
+        - pandera
+      commands:
+        - pip check
+    requirements:
+      run:
+        - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
+        - fastapi
+    test:
+      imports:
+        - pandera.typing.fastapi
+
+  - name: pandera-geopandas
+    test:
+      requires:
+        - pip
+      imports:
+        - pandera
+      commands:
+        - pip check
+    requirements:
+      run:
+        - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
+        - geopandas
+        - shapely
+    test:
+      imports:
+        - pandera.typing.geopandas
 
 about:
   home: https://github.com/pandera-dev/pandera
@@ -62,12 +256,13 @@ about:
   license_file: LICENSE.txt
   summary: Light-weight and flexible validation for pandas data structures
   description: |
-    Pandas data structures hide a lot of information, and explicitly
-    validating them in production-critical or reproducible research
-    settings is a good idea.
+    A dataframe validation library for scientists, engineers, and analysts
+    seeking correctness. Define schemas so you can be confident in the quality
+    of your data.
   doc_url: https://pandera.readthedocs.io/en/latest/
   dev_url: https://github.com/pandera-dev/pandera
 
 extra:
+  feedstock-name: pandera
   recipe-maintainers:
     - cosmicBboy
