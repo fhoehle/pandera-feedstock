@@ -16,8 +16,17 @@ outputs:
   - name: pandera-base
     build:
       noarch: python
-    script: build.bat  # [win]
-    script: build.sh  # [not win]
+      script:
+        - python -m pip install . --no-deps -vv
+
+    test:
+      requires:
+        - pip
+      imports:
+        - pandera
+      commands:
+        - pip check
+
     requirements:
       build:
         - python
@@ -40,8 +49,13 @@ outputs:
         - pandera
 
   - name: pandera
-    build:
-      noarch: python
+    test:
+      requires:
+        - pip
+      imports:
+        - pandera
+      commands:
+        - pip check
     requirements:
       run:
         - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
@@ -50,8 +64,13 @@ outputs:
         - pandera
 
   - name: pandera-strategies
-    build:
-      noarch: python
+    test:
+      requires:
+        - pip
+      imports:
+        - pandera
+      commands:
+        - pip check
     requirements:
       run:
         - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
@@ -61,8 +80,13 @@ outputs:
         - pandera.strategies
 
   - name: pandera-hypotheses
-    build:
-      noarch: python
+    test:
+      requires:
+        - pip
+      imports:
+        - pandera
+      commands:
+        - pip check
     requirements:
       run:
         - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
@@ -72,8 +96,13 @@ outputs:
         - pandera.hypotheses
 
   - name: pandera-io
-    build:
-      noarch: python
+    test:
+      requires:
+        - pip
+      imports:
+        - pandera
+      commands:
+        - pip check
     requirements:
       run:
         - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
@@ -86,8 +115,13 @@ outputs:
         - pandera.io
 
   - name: pandera-koalas
-    build:
-      noarch: python
+    test:
+      requires:
+        - pip
+      imports:
+        - pandera
+      commands:
+        - pip check
     requirements:
       run:
         - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
@@ -99,8 +133,13 @@ outputs:
         - pandera.typing.koalas
 
   - name: pandera-modin
-    build:
-      noarch: python
+    test:
+      requires:
+        - pip
+      imports:
+        - pandera
+      commands:
+        - pip check
     requirements:
       run:
         - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
@@ -111,8 +150,13 @@ outputs:
         - pandera.typing.modin
 
   - name: pandera-modin-ray
-    build:
-      noarch: python
+    test:
+      requires:
+        - pip
+      imports:
+        - pandera
+      commands:
+        - pip check
     requirements:
       run:
         - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
@@ -123,8 +167,13 @@ outputs:
         - pandera.typing.modin
 
   - name: pandera-modin-dask
-    build:
-      noarch: python
+    test:
+      requires:
+        - pip
+      imports:
+        - pandera
+      commands:
+        - pip check
     requirements:
       run:
         - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
@@ -135,8 +184,13 @@ outputs:
         - pandera.typing.modin
 
   - name: pandera-dask
-    build:
-      noarch: python
+    test:
+      requires:
+        - pip
+      imports:
+        - pandera
+      commands:
+        - pip check
     requirements:
       run:
         - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
@@ -148,8 +202,13 @@ outputs:
         - pandera.typing.dask
 
   - name: pandera-mypy
-    build:
-      noarch: python
+    test:
+      requires:
+        - pip
+      imports:
+        - pandera
+      commands:
+        - pip check
     requirements:
       run:
         - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
@@ -160,8 +219,13 @@ outputs:
         - pandera.mypy
 
   - name: pandera-fastapi
-    build:
-      noarch: python
+    test:
+      requires:
+        - pip
+      imports:
+        - pandera
+      commands:
+        - pip check
     requirements:
       run:
         - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
@@ -171,8 +235,13 @@ outputs:
         - pandera.typing.fastapi
 
   - name: pandera-geopandas
-    build:
-      noarch: python
+    test:
+      requires:
+        - pip
+      imports:
+        - pandera
+      commands:
+        - pip check
     requirements:
       run:
         - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
