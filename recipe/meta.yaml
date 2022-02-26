@@ -39,6 +39,16 @@ outputs:
       imports:
         - pandera
 
+  - name: pandera
+    build:
+      noarch: python
+    requirements:
+      run:
+        - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
+    test:
+      imports:
+        - pandera
+
   - name: pandera-strategies
     build:
       noarch: python
