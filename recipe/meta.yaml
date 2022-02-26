@@ -24,13 +24,13 @@ outputs:
         - pip
       run:
         - python >=3.7
-        - numpy >= 1.9.0
-        - pandas >= 1.0
+        - numpy >=1.9.0
+        - pandas >=1.0
         - pandas-stubs
         - typing_extensions
         - typing_inspect >=0.6.0
         - wrapt
-        - packaging >= 20.0
+        - packaging >=20.0
         - pyarrow
         - pydantic
     test:
