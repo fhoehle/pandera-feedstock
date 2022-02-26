@@ -1,1 +1,1 @@
-%PYTHON% -m pip install . --no-deps -vv
+python -m pip install . --no-deps -vv
