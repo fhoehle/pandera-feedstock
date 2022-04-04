@@ -111,7 +111,7 @@ outputs:
         - frictionless
         - click <7.2.0  # frictionless dependency, not a pandera dependency
 
-  - name: pandera-koalas
+  - name: pandera-pyspark
     build:
       noarch: python
     test:
@@ -119,14 +119,13 @@ outputs:
         - pip
       imports:
         - pandera
-        - pandera.koalas_accessor
-        - pandera.typing.koalas
+        - pandera.pyspark_accessor
+        - pandera.typing.pyspark
       commands:
         - pip check
     requirements:
       run:
         - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
-        - koalas
         - pyspark
 
   - name: pandera-modin
