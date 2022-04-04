@@ -5,7 +5,7 @@ Home: https://github.com/pandera-dev/pandera
 
 Package license: MIT
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pandera-feedstock/blob/master/LICENSE.txt)
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pandera-feedstock/blob/main/LICENSE.txt)
 
 Summary: Light-weight and flexible validation for pandas data structures
 
@@ -13,9 +13,9 @@ Development: https://github.com/pandera-dev/pandera
 
 Documentation: https://pandera.readthedocs.io/en/latest/
 
-Pandas data structures hide a lot of information, and explicitly
-validating them in production-critical or reproducible research
-settings is a good idea.
+A dataframe validation library for scientists, engineers, and analysts
+seeking correctness. Define schemas so you can be confident in the quality
+of your data.
 
 
 Current build status
@@ -24,8 +24,8 @@ Current build status
 
 <table><tr><td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8407&branchName=master">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pandera-feedstock?branchName=master">
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8407&branchName=main">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pandera-feedstock?branchName=main">
       </a>
     </td>
   </tr>
@@ -37,6 +37,18 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pandera-green.svg)](https://anaconda.org/conda-forge/pandera) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pandera.svg)](https://anaconda.org/conda-forge/pandera) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pandera.svg)](https://anaconda.org/conda-forge/pandera) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pandera.svg)](https://anaconda.org/conda-forge/pandera) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pandera--base-green.svg)](https://anaconda.org/conda-forge/pandera-base) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pandera-base.svg)](https://anaconda.org/conda-forge/pandera-base) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pandera-base.svg)](https://anaconda.org/conda-forge/pandera-base) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pandera-base.svg)](https://anaconda.org/conda-forge/pandera-base) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pandera--dask-green.svg)](https://anaconda.org/conda-forge/pandera-dask) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pandera-dask.svg)](https://anaconda.org/conda-forge/pandera-dask) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pandera-dask.svg)](https://anaconda.org/conda-forge/pandera-dask) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pandera-dask.svg)](https://anaconda.org/conda-forge/pandera-dask) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pandera--fastapi-green.svg)](https://anaconda.org/conda-forge/pandera-fastapi) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pandera-fastapi.svg)](https://anaconda.org/conda-forge/pandera-fastapi) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pandera-fastapi.svg)](https://anaconda.org/conda-forge/pandera-fastapi) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pandera-fastapi.svg)](https://anaconda.org/conda-forge/pandera-fastapi) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pandera--geopandas-green.svg)](https://anaconda.org/conda-forge/pandera-geopandas) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pandera-geopandas.svg)](https://anaconda.org/conda-forge/pandera-geopandas) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pandera-geopandas.svg)](https://anaconda.org/conda-forge/pandera-geopandas) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pandera-geopandas.svg)](https://anaconda.org/conda-forge/pandera-geopandas) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pandera--hypotheses-green.svg)](https://anaconda.org/conda-forge/pandera-hypotheses) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pandera-hypotheses.svg)](https://anaconda.org/conda-forge/pandera-hypotheses) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pandera-hypotheses.svg)](https://anaconda.org/conda-forge/pandera-hypotheses) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pandera-hypotheses.svg)](https://anaconda.org/conda-forge/pandera-hypotheses) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pandera--io-green.svg)](https://anaconda.org/conda-forge/pandera-io) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pandera-io.svg)](https://anaconda.org/conda-forge/pandera-io) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pandera-io.svg)](https://anaconda.org/conda-forge/pandera-io) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pandera-io.svg)](https://anaconda.org/conda-forge/pandera-io) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pandera--modin-green.svg)](https://anaconda.org/conda-forge/pandera-modin) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pandera-modin.svg)](https://anaconda.org/conda-forge/pandera-modin) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pandera-modin.svg)](https://anaconda.org/conda-forge/pandera-modin) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pandera-modin.svg)](https://anaconda.org/conda-forge/pandera-modin) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pandera--modin--dask-green.svg)](https://anaconda.org/conda-forge/pandera-modin-dask) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pandera-modin-dask.svg)](https://anaconda.org/conda-forge/pandera-modin-dask) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pandera-modin-dask.svg)](https://anaconda.org/conda-forge/pandera-modin-dask) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pandera-modin-dask.svg)](https://anaconda.org/conda-forge/pandera-modin-dask) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pandera--modin--ray-green.svg)](https://anaconda.org/conda-forge/pandera-modin-ray) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pandera-modin-ray.svg)](https://anaconda.org/conda-forge/pandera-modin-ray) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pandera-modin-ray.svg)](https://anaconda.org/conda-forge/pandera-modin-ray) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pandera-modin-ray.svg)](https://anaconda.org/conda-forge/pandera-modin-ray) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pandera--mypy-green.svg)](https://anaconda.org/conda-forge/pandera-mypy) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pandera-mypy.svg)](https://anaconda.org/conda-forge/pandera-mypy) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pandera-mypy.svg)](https://anaconda.org/conda-forge/pandera-mypy) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pandera-mypy.svg)](https://anaconda.org/conda-forge/pandera-mypy) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pandera--pyspark-green.svg)](https://anaconda.org/conda-forge/pandera-pyspark) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pandera-pyspark.svg)](https://anaconda.org/conda-forge/pandera-pyspark) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pandera-pyspark.svg)](https://anaconda.org/conda-forge/pandera-pyspark) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pandera-pyspark.svg)](https://anaconda.org/conda-forge/pandera-pyspark) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pandera--strategies-green.svg)](https://anaconda.org/conda-forge/pandera-strategies) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pandera-strategies.svg)](https://anaconda.org/conda-forge/pandera-strategies) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pandera-strategies.svg)](https://anaconda.org/conda-forge/pandera-strategies) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pandera-strategies.svg)](https://anaconda.org/conda-forge/pandera-strategies) |
 
 Installing pandera
 ==================
@@ -48,16 +60,41 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `pandera` can be installed with:
+Once the `conda-forge` channel has been enabled, `pandera, pandera-base, pandera-dask, pandera-fastapi, pandera-geopandas, pandera-hypotheses, pandera-io, pandera-modin, pandera-modin-dask, pandera-modin-ray, pandera-mypy, pandera-pyspark, pandera-strategies` can be installed with `conda`:
 
 ```
-conda install pandera
+conda install pandera pandera-base pandera-dask pandera-fastapi pandera-geopandas pandera-hypotheses pandera-io pandera-modin pandera-modin-dask pandera-modin-ray pandera-mypy pandera-pyspark pandera-strategies
 ```
 
-It is possible to list all of the versions of `pandera` available on your platform with:
+or with `mamba`:
+
+```
+mamba install pandera pandera-base pandera-dask pandera-fastapi pandera-geopandas pandera-hypotheses pandera-io pandera-modin pandera-modin-dask pandera-modin-ray pandera-mypy pandera-pyspark pandera-strategies
+```
+
+It is possible to list all of the versions of `pandera` available on your platform with `conda`:
 
 ```
 conda search pandera --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search pandera --channel conda-forge
+```
+
+Alternatively, `mamba repoquery` may provide more information:
+
+```
+# Search all versions available on your platform:
+mamba repoquery search pandera --channel conda-forge
+
+# List packages depending on `pandera`:
+mamba repoquery whoneeds pandera --channel conda-forge
+
+# List dependencies of `pandera`:
+mamba repoquery depends pandera --channel conda-forge
 ```
 
 
@@ -75,10 +112,12 @@ for each of the installable packages. Such a repository is known as a *feedstock
 A feedstock is made up of a conda recipe (the instructions on what and how to build
 the package) and the necessary configurations for automatic building using freely
 available continuous integration services. Thanks to the awesome service provided by
-[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/)
-and [TravisCI](https://travis-ci.com/) it is possible to build and upload installable
-packages to the [conda-forge](https://anaconda.org/conda-forge)
-[Anaconda-Cloud](https://anaconda.org/) channel for Linux, Windows and OSX respectively.
+[Azure](https://azure.microsoft.com/en-us/services/devops/), [GitHub](https://github.com/),
+[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
+[Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
+it is possible to build and upload installable packages to the
+[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
