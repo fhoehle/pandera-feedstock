@@ -42,9 +42,6 @@ outputs:
         - packaging >=20.0
         - pyarrow
         - pydantic
-    test:
-      imports:
-        - pandera
 
   - name: pandera
     build:
