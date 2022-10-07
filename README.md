@@ -7,15 +7,15 @@ Package license: MIT
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pandera-feedstock/blob/main/LICENSE.txt)
 
-Summary: Light-weight and flexible validation for pandas data structures
+Summary: The open source framework for precision data testing
 
-Development: https://github.com/pandera-dev/pandera
+Development: https://github.com/unionai-oss/pandera
 
 Documentation: https://pandera.readthedocs.io/en/latest/
 
-A dataframe validation library for scientists, engineers, and analysts
-seeking correctness. Define schemas so you can be confident in the quality
-of your data.
+A simple, zero-configuration Python library to help you build
+confidence in the quality of your dataframe-like containers through
+data validation and property-based testing.
 
 
 Current build status
