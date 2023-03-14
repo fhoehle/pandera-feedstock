@@ -80,7 +80,7 @@ outputs:
         - pip
       imports:
         - pandera
-        - pandera.hypotheses
+        - pandera.api.hypotheses
       commands:
         - pip check
     requirements:
@@ -115,7 +115,7 @@ outputs:
         - pip
       imports:
         - pandera
-        - pandera.pyspark_accessor
+        - pandera.accessors.pyspark_accessor
         - pandera.typing.pyspark
       commands:
         - pip check
@@ -132,7 +132,7 @@ outputs:
         - pip
       imports:
         - pandera
-        - pandera.modin_accessor
+        - pandera.accessors.modin_accessor
         - pandera.typing.modin
       commands:
         - pip check
@@ -149,7 +149,7 @@ outputs:
         - pip
       imports:
         - pandera
-        - pandera.modin_accessor
+        - pandera.accessors.modin_accessor
         - pandera.typing.modin
       commands:
         - pip check
@@ -166,7 +166,7 @@ outputs:
         - pip
       imports:
         - pandera
-        - pandera.modin_accessor
+        - pandera.accessors.modin_accessor
         - pandera.typing.modin
       commands:
         - pip check
@@ -183,7 +183,7 @@ outputs:
         - pip
       imports:
         - pandera
-        - pandera.dask_accessor
+        - pandera.accessors.dask_accessor
         - pandera.typing.dask
       commands:
         - pip check
