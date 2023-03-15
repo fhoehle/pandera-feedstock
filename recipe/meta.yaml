@@ -1,5 +1,5 @@
 {% set name = "pandera" %}
-{% set version = "0.13.4" %}
+{% set version = "0.14.2" %}
 
 package:
   name: pandera-suite
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6ef2b7ee00d3439ac815d4347984421a08502da1020cec60c06dd0135e8aee2f
+  sha256: fbb721cf64de04c20aeda3b491046e740ba095d66d1afe555da19e32fa92b8fc
 
 build:
   number: 0
@@ -33,6 +33,7 @@ outputs:
         - pip
       run:
         - python >=3.7
+        - multimethod
         - numpy >=1.9.0
         - pandas >=1.0
         - typing_extensions
@@ -79,7 +80,7 @@ outputs:
         - pip
       imports:
         - pandera
-        - pandera.hypotheses
+        - pandera.api.hypotheses
       commands:
         - pip check
     requirements:
@@ -114,7 +115,7 @@ outputs:
         - pip
       imports:
         - pandera
-        - pandera.pyspark_accessor
+        - pandera.accessors.pyspark_accessor
         - pandera.typing.pyspark
       commands:
         - pip check
@@ -131,7 +132,7 @@ outputs:
         - pip
       imports:
         - pandera
-        - pandera.modin_accessor
+        - pandera.accessors.modin_accessor
         - pandera.typing.modin
       commands:
         - pip check
@@ -148,7 +149,7 @@ outputs:
         - pip
       imports:
         - pandera
-        - pandera.modin_accessor
+        - pandera.accessors.modin_accessor
         - pandera.typing.modin
       commands:
         - pip check
@@ -165,7 +166,7 @@ outputs:
         - pip
       imports:
         - pandera
-        - pandera.modin_accessor
+        - pandera.accessors.modin_accessor
         - pandera.typing.modin
       commands:
         - pip check
@@ -182,7 +183,7 @@ outputs:
         - pip
       imports:
         - pandera
-        - pandera.dask_accessor
+        - pandera.accessors.dask_accessor
         - pandera.typing.dask
       commands:
         - pip check
