@@ -1,5 +1,5 @@
 {% set name = "pandera" %}
-{% set version = "0.14.5" %}
+{% set version = "0.15.1" %}
 
 package:
   name: pandera-suite
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 41cb917ecb898c392af9e34c13cd55d42934b10a36595b0d39cbbb5129e56487
+  sha256: 1cc70f5f182f5b4bd2e248f49372fcd88eba8423b8604ea9e1ebd64222730a41
 
 build:
   number: 0
@@ -37,6 +37,7 @@ outputs:
         - numpy >=1.9.0
         - pandas >=1.0
         - typing_extensions
+        - typeguard >=3.0.2
         - typing_inspect >=0.6.0
         - wrapt
         - packaging >=20.0
