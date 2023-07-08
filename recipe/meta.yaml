@@ -41,7 +41,7 @@ outputs:
         - typing_inspect >=0.6.0
         - wrapt
         - packaging >=20.0
-        - pydantic
+        - pydantic < 2.0.0
 
   - name: pandera
     build:
