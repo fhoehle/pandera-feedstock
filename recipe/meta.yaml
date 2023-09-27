@@ -1,5 +1,5 @@
 {% set name = "pandera" %}
-{% set version = "0.17.0" %}
+{% set version = "0.17.1" %}
 
 package:
   name: pandera-suite
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e8d37af61921039ba49e908b174d86ab3bbb95087205e907fae1b90a8220525f
+  sha256: 57d778585158eba5981ddf6f68e0bbc507f976a7ed617608299a8657a997216e
 
 build:
   number: 0
