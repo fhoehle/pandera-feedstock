@@ -259,3 +259,4 @@ extra:
   feedstock-name: pandera
   recipe-maintainers:
     - cosmicBboy
+    - fhoehle
