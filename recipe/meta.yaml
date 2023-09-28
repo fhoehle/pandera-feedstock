@@ -10,7 +10,7 @@ source:
   sha256: 57d778585158eba5981ddf6f68e0bbc507f976a7ed617608299a8657a997216e
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: pandera-base
@@ -29,19 +29,18 @@ outputs:
 
     requirements:
       host:
-        - python >=3.7
+        - python >=3.8
         - pip
       run:
-        - python >=3.7
+        - python >=3.8
         - multimethod
-        - numpy >=1.9.0
-        - pandas >=1.0
-        - typing_extensions
+        - numpy >=1.19.0
+        - packaging >=20.0
+        - pandas >=1.2.0
+        - pydantic
         - typeguard >=3.0.2
         - typing_inspect >=0.6.0
         - wrapt
-        - packaging >=20.0
-        - pydantic <2.0.0
 
   - name: pandera
     build:
@@ -105,8 +104,7 @@ outputs:
         - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
         - pyyaml >=5.1
         - black
-        - frictionless
-        - click <7.2.0  # frictionless dependency, not a pandera dependency
+        - frictionless <=4.40.8
 
   - name: pandera-pyspark
     build:
@@ -123,7 +121,7 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
-        - pyspark
+        - pyspark >=3.2.0
 
   - name: pandera-modin
     build:
@@ -261,3 +259,4 @@ extra:
   feedstock-name: pandera
   recipe-maintainers:
     - cosmicBboy
+    - fhoehle
