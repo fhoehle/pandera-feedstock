@@ -165,4 +165,5 @@ Feedstock Maintainers
 =====================
 
 * [@cosmicBboy](https://github.com/cosmicBboy/)
+* [@fhoehle](https://github.com/fhoehle/)
 
