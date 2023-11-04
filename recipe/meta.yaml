@@ -10,7 +10,7 @@ source:
   sha256: 67515984f855ba14d12443f893b5ff90ae6796f613d5f3df43abad406a48c373
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: pandera-base
