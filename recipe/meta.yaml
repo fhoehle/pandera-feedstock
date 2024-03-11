@@ -33,7 +33,7 @@ outputs:
         - pip
       run:
         - python >=3.8
-        - multimethod
+        - multimethod <=1.10.0
         - numpy >=1.19.0
         - packaging >=20.0
         - pandas >=1.2.0
