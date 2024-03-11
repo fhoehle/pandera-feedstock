@@ -1,5 +1,5 @@
 {% set name = "pandera" %}
-{% set version = "0.18.0" %}
+{% set version = "0.18.1" %}
 
 package:
   name: pandera-suite
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 97ab33d884362c0bb99668a12be2855d15c1a71f4934c588a999947b47764bc1
+  sha256: 6bd696e67400e31d1e4b422a932711927c623d339af5dfe6447497952d6455f3
 
 build:
   number: 0
@@ -33,7 +33,7 @@ outputs:
         - pip
       run:
         - python >=3.8
-        - multimethod
+        - multimethod <=1.10.0
         - numpy >=1.19.0
         - packaging >=20.0
         - pandas >=1.2.0
