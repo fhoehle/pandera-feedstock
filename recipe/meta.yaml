@@ -120,7 +120,7 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
-        - polars >= 0.20.0
+        - polars >=0.20.0
 
   - name: pandera-pyspark
     build:
