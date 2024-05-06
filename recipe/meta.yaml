@@ -106,6 +106,22 @@ outputs:
         - black
         - frictionless <=4.40.8
 
+  - name: pandera-polars
+    build:
+      noarch: python
+    test:
+      requires:
+        - pip
+      imports:
+        - pandera
+        - pandera.typing.polars
+      commands:
+        - pip check
+    requirements:
+      run:
+        - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
+        - polars >= 0.20.0
+
   - name: pandera-pyspark
     build:
       noarch: python
