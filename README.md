@@ -47,6 +47,7 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pandera--modin--dask-green.svg)](https://anaconda.org/conda-forge/pandera-modin-dask) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pandera-modin-dask.svg)](https://anaconda.org/conda-forge/pandera-modin-dask) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pandera-modin-dask.svg)](https://anaconda.org/conda-forge/pandera-modin-dask) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pandera-modin-dask.svg)](https://anaconda.org/conda-forge/pandera-modin-dask) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pandera--modin--ray-green.svg)](https://anaconda.org/conda-forge/pandera-modin-ray) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pandera-modin-ray.svg)](https://anaconda.org/conda-forge/pandera-modin-ray) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pandera-modin-ray.svg)](https://anaconda.org/conda-forge/pandera-modin-ray) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pandera-modin-ray.svg)](https://anaconda.org/conda-forge/pandera-modin-ray) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pandera--mypy-green.svg)](https://anaconda.org/conda-forge/pandera-mypy) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pandera-mypy.svg)](https://anaconda.org/conda-forge/pandera-mypy) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pandera-mypy.svg)](https://anaconda.org/conda-forge/pandera-mypy) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pandera-mypy.svg)](https://anaconda.org/conda-forge/pandera-mypy) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pandera--polars-green.svg)](https://anaconda.org/conda-forge/pandera-polars) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pandera-polars.svg)](https://anaconda.org/conda-forge/pandera-polars) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pandera-polars.svg)](https://anaconda.org/conda-forge/pandera-polars) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pandera-polars.svg)](https://anaconda.org/conda-forge/pandera-polars) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pandera--pyspark-green.svg)](https://anaconda.org/conda-forge/pandera-pyspark) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pandera-pyspark.svg)](https://anaconda.org/conda-forge/pandera-pyspark) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pandera-pyspark.svg)](https://anaconda.org/conda-forge/pandera-pyspark) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pandera-pyspark.svg)](https://anaconda.org/conda-forge/pandera-pyspark) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pandera--strategies-green.svg)](https://anaconda.org/conda-forge/pandera-strategies) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pandera-strategies.svg)](https://anaconda.org/conda-forge/pandera-strategies) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pandera-strategies.svg)](https://anaconda.org/conda-forge/pandera-strategies) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pandera-strategies.svg)](https://anaconda.org/conda-forge/pandera-strategies) |
 
@@ -60,16 +61,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `pandera, pandera-base, pandera-dask, pandera-fastapi, pandera-geopandas, pandera-hypotheses, pandera-io, pandera-modin, pandera-modin-dask, pandera-modin-ray, pandera-mypy, pandera-pyspark, pandera-strategies` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `pandera, pandera-base, pandera-dask, pandera-fastapi, pandera-geopandas, pandera-hypotheses, pandera-io, pandera-modin, pandera-modin-dask, pandera-modin-ray, pandera-mypy, pandera-polars, pandera-pyspark, pandera-strategies` can be installed with `conda`:
 
 ```
-conda install pandera pandera-base pandera-dask pandera-fastapi pandera-geopandas pandera-hypotheses pandera-io pandera-modin pandera-modin-dask pandera-modin-ray pandera-mypy pandera-pyspark pandera-strategies
+conda install pandera pandera-base pandera-dask pandera-fastapi pandera-geopandas pandera-hypotheses pandera-io pandera-modin pandera-modin-dask pandera-modin-ray pandera-mypy pandera-polars pandera-pyspark pandera-strategies
 ```
 
 or with `mamba`:
 
 ```
-mamba install pandera pandera-base pandera-dask pandera-fastapi pandera-geopandas pandera-hypotheses pandera-io pandera-modin pandera-modin-dask pandera-modin-ray pandera-mypy pandera-pyspark pandera-strategies
+mamba install pandera pandera-base pandera-dask pandera-fastapi pandera-geopandas pandera-hypotheses pandera-io pandera-modin pandera-modin-dask pandera-modin-ray pandera-mypy pandera-polars pandera-pyspark pandera-strategies
 ```
 
 It is possible to list all of the versions of `pandera` available on your platform with `conda`:
