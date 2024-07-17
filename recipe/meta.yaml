@@ -70,7 +70,7 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage('pandera-base', max_pin="x.x.x") }}
-        - hypothesis >=5.41.1
+        - hypothesis >=6.92.7
 
   - name: pandera-hypotheses
     build:
