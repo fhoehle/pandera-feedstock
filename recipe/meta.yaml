@@ -10,7 +10,7 @@ source:
   sha256: d8542a68493d2dfe3226c186cc145be8d27535d7edf396178e93811515fe3470
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: pandera-base
@@ -38,7 +38,7 @@ outputs:
         - packaging >=20.0
         - pandas >=1.2.0
         - pydantic >=1.5.0
-        - typeguard >=3.0.2
+        - typeguard
         - typing_inspect >=0.6.0
         - wrapt
 
