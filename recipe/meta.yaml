@@ -1,13 +1,13 @@
 {% set name = "pandera" %}
-{% set version = "0.20.4" %}
+{% set version = "0.21.0" %}
 
 package:
   name: pandera-suite
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ccf6178293ef9d4393dc4776e47477e3d2dd51c800ecdfedec67fff50f4ad3c2
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 12a1e67478dc72459eff8329036e1d3502fcc4332c9c70bdbd88a78b7597aa8a
 
 build:
   number: 0
@@ -30,6 +30,7 @@ outputs:
     requirements:
       host:
         - python >=3.8
+        - setuptools
         - pip
       run:
         - python >=3.8
