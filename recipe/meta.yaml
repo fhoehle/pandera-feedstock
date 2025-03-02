@@ -17,7 +17,21 @@ outputs:
     build:
       noarch: python
       script:
-        - python -m pip install . --no-deps -vv
+        - python -m pip install . -vv --no-deps --no-build-isolation
+
+    requirements:
+      host:
+        - python {{ python_min }}
+        - setuptools
+        - pip
+      run:
+        - python >={{ python_min }}
+        - numpy >=1.24.4
+        - packaging >=20.0
+        - pandas >=2.1.1
+        - pydantic
+        - typeguard
+        - typing_inspect >=0.6.0
 
     test:
       requires:
@@ -27,20 +41,6 @@ outputs:
         - pandera
       commands:
         - pip check
-
-    requirements:
-      host:
-        - python {{ python_min }}
-        - setuptools
-        - pip
-      run:
-        - python >={{ python_min }}
-        - numpy >=1.19.0
-        - packaging >=20.0
-        - pandas >=1.2.0
-        - pydantic
-        - typeguard
-        - typing_inspect >=0.6.0
 
   - name: pandera
     build:
