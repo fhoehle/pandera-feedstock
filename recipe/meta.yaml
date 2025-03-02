@@ -1,5 +1,5 @@
 {% set name = "pandera" %}
-{% set version = "0.22.1" %}
+{% set version = "0.23.0" %}
 
 package:
   name: pandera-suite
@@ -7,17 +7,31 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 091ebc353383ba642e5a20ee0df763ed2059ab99cb4b2ac3e83f482de8493645
+  sha256: 2afa00945ebe00558b5240c988effff48ec806e3ede6bd19a574f2a5f1abe214
 
 build:
-  number: 1
+  number: 0
 
 outputs:
   - name: pandera-base
     build:
       noarch: python
       script:
-        - python -m pip install . --no-deps -vv
+        - python -m pip install . -vv --no-deps --no-build-isolation
+
+    requirements:
+      host:
+        - python {{ python_min }}
+        - setuptools
+        - pip
+      run:
+        - python >={{ python_min }}
+        - numpy >=1.24.4
+        - packaging >=20.0
+        - pandas >=2.1.1
+        - pydantic
+        - typeguard
+        - typing_inspect >=0.6.0
 
     test:
       requires:
@@ -27,20 +41,6 @@ outputs:
         - pandera
       commands:
         - pip check
-
-    requirements:
-      host:
-        - python {{ python_min }}
-        - setuptools
-        - pip
-      run:
-        - python >={{ python_min }}
-        - numpy >=1.19.0
-        - packaging >=20.0
-        - pandas >=1.2.0
-        - pydantic
-        - typeguard
-        - typing_inspect >=0.6.0
 
   - name: pandera
     build:
