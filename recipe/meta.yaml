@@ -10,7 +10,7 @@ source:
   sha256: 2afa00945ebe00558b5240c988effff48ec806e3ede6bd19a574f2a5f1abe214
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: pandera-base
@@ -22,7 +22,8 @@ outputs:
     requirements:
       host:
         - python {{ python_min }}
-        - setuptools
+        - setuptools >=61.0
+        - setuptools-scm >=8.0.1
         - pip
       run:
         - python >={{ python_min }}
