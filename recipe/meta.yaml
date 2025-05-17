@@ -45,7 +45,7 @@ outputs:
 
   - name: pandera
     build:
-      noarch: python
+      noarch: generic
     test:
       requires:
         - pip
@@ -60,7 +60,7 @@ outputs:
 
   - name: pandera-strategies
     build:
-      noarch: python
+      noarch: generic
     test:
       requires:
         - pip
@@ -77,7 +77,7 @@ outputs:
 
   - name: pandera-hypotheses
     build:
-      noarch: python
+      noarch: generic
     test:
       requires:
         - pip
@@ -94,7 +94,7 @@ outputs:
 
   - name: pandera-io
     build:
-      noarch: python
+      noarch: generic
     test:
       requires:
         - pip
@@ -113,7 +113,7 @@ outputs:
 
   - name: pandera-polars
     build:
-      noarch: python
+      noarch: generic
     test:
       requires:
         - pip
@@ -130,7 +130,7 @@ outputs:
 
   - name: pandera-pyspark
     build:
-      noarch: python
+      noarch: generic
     test:
       requires:
         - pip
@@ -148,7 +148,7 @@ outputs:
 
   - name: pandera-modin
     build:
-      noarch: python
+      noarch: generic
     test:
       requires:
         - pip
@@ -166,7 +166,7 @@ outputs:
 
   - name: pandera-modin-ray
     build:
-      noarch: python
+      noarch: generic
     test:
       requires:
         - pip
@@ -184,7 +184,7 @@ outputs:
 
   - name: pandera-modin-dask
     build:
-      noarch: python
+      noarch: generic
     test:
       requires:
         - pip
@@ -202,7 +202,7 @@ outputs:
 
   - name: pandera-dask
     build:
-      noarch: python
+      noarch: generic
     test:
       requires:
         - pip
@@ -221,7 +221,7 @@ outputs:
 
   - name: pandera-mypy
     build:
-      noarch: python
+      noarch: generic
     test:
       requires:
         - pip
@@ -239,7 +239,7 @@ outputs:
 
   - name: pandera-fastapi
     build:
-      noarch: python
+      noarch: generic
     test:
       requires:
         - pip
@@ -256,7 +256,7 @@ outputs:
 
   - name: pandera-geopandas
     build:
-      noarch: python
+      noarch: generic
     test:
       requires:
         - pip
